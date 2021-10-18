@@ -54,7 +54,6 @@ let times = 0;
 for( let variable of arrC ) {
 
 if (highest > variable){
-
    highest = variable;
  }
 }
@@ -78,23 +77,135 @@ if (highest < variable){
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse,cat1,cat2) {
+  
+  if ( Math.abs(cat1 - mouse) < Math.abs(cat2 - mouse) ){
+    return "cat1";
+  } else if ( Math.abs(cat1 - mouse) > Math.abs(cat2 - mouse) ){
+    return "cat2";
+  } else {
+    return "os gatos trombam e o rato foge";
+  }
+
+
+
+  
+  
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(arrD) {
+  
+let arrFizzBuzz = []; 
+
+  for (let id  in arrD ) {
+    if (arrD[id]%3===0 && arrD[id]%5==0){
+      arrFizzBuzz[id]= "fizzBuzz";
+    } else if (arrD[id]%3===0){
+      arrFizzBuzz[id]="fizz";
+    } else if (arrD[id]%5===0){
+      arrFizzBuzz[id]="buzz";
+    } else {
+      arrFizzBuzz[id]="bug!";
+    }
+  
+    
+
+
+
+}
+return arrFizzBuzz;
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(simpleWord) {
+let arrWord = [];
+let arrCode = [];
+let codeWord ="";
+arrWord = simpleWord.split("")
+
+for (index in arrWord){
+
+switch (arrWord[index]) {
+  case 'a':
+    arrCode[index] = 1;
+    break;
+    case 'e':
+      arrCode[index] = 2;
+      break;
+      case 'i':
+        arrCode[index] = 3;
+        break;
+        case 'o':
+          arrCode[index] = 4;
+          break;
+          case 'u':
+            arrCode[index] = 5;    
+            break;
+    
+  default:
+    arrCode[index] = arrWord[index];
+
+    break;
 }
 
-function decode() {
-  // seu código aqui
 }
+
+
+
+for(index in arrCode){
+codeWord = codeWord + arrCode[index]; 
+}
+return codeWord;
+}
+
+
+function decode(codedWord) {
+
+
+  let arrWord = [];
+  let arrCode = [];
+  let codeWord ="";
+  arrWord = codedWord.split("")
+  
+  for (index in arrWord){
+  
+  switch (arrWord[index]) {
+    case '1':
+      arrCode[index] = 'a';
+      break;
+      case '2':
+        arrCode[index] = 'e';
+        break;
+        case '3':
+          arrCode[index] = 'i';
+          break;
+          case '4':
+            arrCode[index] = 'o';
+            break;
+            case '5':
+              arrCode[index] = 'u';    
+              break;
+      
+    default:
+      arrCode[index] = arrWord[index];
+  
+      break;
+  }
+  
+  }
+  
+  
+  
+  for(index in arrCode){
+  codeWord = codeWord + arrCode[index]; 
+  }
+  return codeWord;
+  }
+
+
+
+
 
 module.exports = {
   calcArea,
