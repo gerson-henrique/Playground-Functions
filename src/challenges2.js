@@ -88,12 +88,50 @@ return finalNumber
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA,lineB,lineC) {
+
+
+
+
+
+if (lineA > (lineB +lineC)){
+  return false;
+ } 
+ 
+if (lineB > (lineA +lineC)){
+  return false;
+} 
+
+if (lineC > (lineA +lineB)){
+  return false;
+} 
+
+return true;
+
 }
 
+
 // Desafio 13
-function hydrate() {
+function hydrate(frase) {
+
+  // all things javascript LLC
+    let exReg = /\d+/g; //"quero todos os digitos em um escopo global"
+    let resultado = frase.match(exReg);
+    let fraseR =0;
+
+    
+for (let numero of resultado) {
+
+  fraseR  +=  parseInt(numero);
+  
+
+}
+if (resultado == 1 ){
+  return 1 + " copo de água"
+}
+
+return fraseR + " copos de água"
+
   // seu código aqui
 }
 
