@@ -21,10 +21,10 @@ function splitSentence(stringA) {
 function concatName(arrB) {
   let stringB = '';
 
-  for (i = arrB.length - 1; i >= 0; i--) {
-    if (i == arrB.length - 1) {
+  for (let i = arrB.length - 1; i >= 0; i -= 1) {
+    if (i === arrB.length - 1) {
       stringB = arrB[i];
-    } else if (i == 0) {
+    } else if (i === 0) {
       stringB = `${stringB}, ${arrB[i]}`;
     }
   }
@@ -38,14 +38,9 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(arrC) {
-  let highest = 0;
+  let highest = arrC[0];
   let times = 0;
 
-  for (let variable of arrC) {
-    if (highest > variable) {
-      highest = variable;
-    }
-  }
 
   for (let variable of arrC) {
     if (highest < variable) {
