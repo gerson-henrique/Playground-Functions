@@ -41,7 +41,6 @@ function highestCount(arrC) {
   let highest = arrC[0];
   let times = 0;
 
-
   for (let variable of arrC) {
     if (highest < variable) {
       highest = variable;
@@ -49,8 +48,8 @@ function highestCount(arrC) {
   }
 
   for (let variable of arrC) {
-    if (highest == variable) {
-      times++;
+    if (highest === variable) {
+      times += 1;
     }
   }
 
@@ -72,7 +71,7 @@ function fizzBuzz(arrD) {
   let arrFizzBuzz = [];
 
   for (let id in arrD) {
-    if (arrD[id] % 3 === 0 && arrD[id] % 5 == 0) {
+    if (arrD[id] % 3 === 0 && arrD[id] % 5 === 0) {
       arrFizzBuzz[id] = 'fizzBuzz';
     } else if (arrD[id] % 3 === 0) {
       arrFizzBuzz[id] = 'fizz';
@@ -92,7 +91,7 @@ function encode(simpleWord) {
   let codeWord = '';
   arrWord = simpleWord.split('');
 
-  for (index in arrWord) {
+  for (let index in arrWord) {
     switch (arrWord[index]) {
     case 'a':
       arrCode[index] = 1;
@@ -109,10 +108,8 @@ function encode(simpleWord) {
     case 'u':
       arrCode[index] = 5;
       break;
-
     default:
       arrCode[index] = arrWord[index];
-
       break;
     }
   }
@@ -129,7 +126,7 @@ function decode(codedWord) {
   let codeWord = '';
   arrWord = codedWord.split('');
 
-  for (index in arrWord) {
+  for (let index in arrWord) {
     switch (arrWord[index]) {
     case '1':
       arrCode[index] = 'a';

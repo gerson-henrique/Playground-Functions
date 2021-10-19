@@ -1,15 +1,20 @@
-const { splitSentence } = require('./challenges');
+const {
+  splitSentence,
+} = require('./challenges');
 
 // Desafio 10
 function techList(tech, name) {
   let i = 0;
-  arrObjts = [];
+  let arrObjts = [];
 
   if (tech.length > 0) {
     tech.sort();
 
-    for (i = 0; i < tech.length; i++) {
-      arrObjts.push({ tech: tech[i], name });
+    for (i = 0; i < tech.length; i += 1) {
+      arrObjts.push({
+        tech: tech[i],
+        name,
+      });
     }
     return arrObjts;
   }
@@ -22,7 +27,7 @@ function generatePhoneNumber(arrNumber) {
   let flag = 0;
   let finalNumber = '';
 
-  if (arrNumber.length != 11) {
+  if (arrNumber.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
 
@@ -32,9 +37,9 @@ function generatePhoneNumber(arrNumber) {
 
   chech3times.sort();
 
-  for (let i = 0; i <= 10; i++) {
-    if (chech3times[i] == chech3times[i + 1]) {
-      flag++;
+  for (let i = 0; i <= 10; i += 1) {
+    if (chech3times[i] === chech3times[i + 1]) {
+      flag += 1;
     } else {
       flag = 0;
     }
@@ -89,7 +94,7 @@ function hydrate(frase) {
   for (let numero of resultado) {
     fraseR += parseInt(numero);
   }
-  if (resultado == 1) {
+  if (resultado === 1) {
     return `${1} copo de água`;
   }
 
