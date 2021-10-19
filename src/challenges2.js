@@ -1,6 +1,4 @@
-const {
-  splitSentence,
-} = require('./challenges');
+
 
 // Desafio 10
 function techList(tech, name) {
@@ -94,7 +92,9 @@ function hydrate(frase) {
   for (let numero of resultado) {
     fraseR += parseInt(numero);
   }
-  if (resultado === 1) {
+
+
+  if (resultado == 1) {
     return `${1} copo de água`;
   }
 
