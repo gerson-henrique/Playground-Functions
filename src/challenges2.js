@@ -99,20 +99,15 @@ function hydrate(frase) {
   let exReg = /\d+/g; // "quero todos os digitos em um escopo global"
   let resultado = frase.match(exReg);
   let fraseR = 0;
-  let numero = 0;
-
-  for (numero = 0; numero < resultado.length; numero += 1) {
+  for (let numero of resultado) {
     fraseR += parseInt(numero, 10);
   }
-
-  if (resultado === 1) {
+  if (fraseR === 1) {
     return `${1} copo de água`;
   }
-
   return `${fraseR} copos de água`;
-
-  // seu código aqui
 }
+
 module.exports = {
   generatePhoneNumber,
   techList,
